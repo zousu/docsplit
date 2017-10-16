@@ -43,7 +43,7 @@ module Docsplit
     # see: https://github.com/mirkonasato/jodconverter/blob/master/jodconverter-core/src/main/java/org/artofsolving/jodconverter/office/OfficeUtils.java#L63-L91
     def office_search_paths
       if windows?
-        office_names       = ["LibreOffice 3", "LibreOffice 4", "OpenOffice.org 3"]
+        office_names       = ["LibreOffice 3", "LibreOffice 4", "OpenOffice.org 3", "Libreoffice 5.4"]
         program_files_path = ENV["CommonProgramFiles"]
         search_paths       = office_names.map{ |program| File.join(program_files_path, program) }
       elsif osx?
@@ -65,6 +65,7 @@ module Docsplit
           /usr/local/bin
           /usr/lib64/libreoffice
           /usr/lib64/openoffice.org3
+          /opt/libreoffice5.4
         )
       end
       search_paths
